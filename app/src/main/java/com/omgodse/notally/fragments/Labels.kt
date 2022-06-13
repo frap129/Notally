@@ -21,7 +21,7 @@ import com.omgodse.notally.recyclerview.adapters.LabelAdapter
 import com.omgodse.notally.room.Label
 import com.omgodse.notally.viewmodels.BaseNoteModel
 
-class Labels : Fragment(), ItemListener {
+class Labels : Fragment(),  ItemListener {
 
     private var adapter: LabelAdapter? = null
     private var binding: FragmentNotesBinding? = null

@@ -22,6 +22,7 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.omgodse.notally.MenuDialog
 import com.omgodse.notally.R
+import com.omgodse.notally.activities.DrawNote
 import com.omgodse.notally.activities.MakeList
 import com.omgodse.notally.activities.TakeNote
 import com.omgodse.notally.databinding.DialogColorBinding
@@ -96,6 +97,7 @@ abstract class NotallyFragment : Fragment(), OperationsParent, ItemListener {
                 when (item.type) {
                     Type.NOTE -> goToActivity(TakeNote::class.java, item)
                     Type.LIST -> goToActivity(MakeList::class.java, item)
+                    Type.DRAW -> goToActivity(DrawNote::class.java, item)
                 }
             }
         }
