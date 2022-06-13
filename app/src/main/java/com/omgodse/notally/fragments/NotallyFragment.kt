@@ -169,6 +169,7 @@ abstract class NotallyFragment : Fragment(), OperationsParent, ItemListener {
         val body = when (baseNote.type) {
             Type.NOTE -> baseNote.body.applySpans(baseNote.spans)
             Type.LIST -> Operations.getBody(baseNote.items)
+            Type.DRAW -> baseNote.drawing
         }
         Operations.shareNote(requireContext(), baseNote.title, body)
     }

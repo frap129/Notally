@@ -1,5 +1,6 @@
 package com.omgodse.notally.room
 
+import android.graphics.Bitmap
 import android.os.Parcelable
 import androidx.room.Entity
 import androidx.room.Index
@@ -20,4 +21,5 @@ data class BaseNote(
     val body: String,
     val spans: List<SpanRepresentation>,
     val items: List<ListItem>,
+    val drawing: String,
 ) : Item(ViewType.NOTE), Parcelable

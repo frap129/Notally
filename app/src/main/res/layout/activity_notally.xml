@@ -66,6 +66,14 @@
                 android:paddingBottom="16dp"
                 android:textAppearance="?attr/textAppearanceBody1" />
 
+            <net.mulliken.einkdrawing.NoteView
+                android:id="@+id/NoteView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp" />
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/RecyclerView"
                 android:layout_width="match_parent"

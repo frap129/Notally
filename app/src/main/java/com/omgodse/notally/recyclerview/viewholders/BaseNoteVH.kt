@@ -125,12 +125,13 @@ class BaseNoteVH(
         return when (baseNote.type) {
             Type.NOTE -> baseNote.title.isBlank() && baseNote.body.isBlank()
             Type.LIST -> baseNote.title.isBlank() && baseNote.items.isEmpty()
+            Type.DRAW -> baseNote.title.isBlank() && baseNote.drawing.isEmpty()
         }
     }
 
     private fun getEmptyMessage(baseNote: BaseNote): Int {
         return when (baseNote.type) {
-            Type.NOTE -> R.string.empty_note
+            Type.NOTE, Type.DRAW -> R.string.empty_note
             Type.LIST -> R.string.empty_list
         }
     }

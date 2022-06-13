@@ -1,6 +1,7 @@
 package com.omgodse.notally.viewmodels
 
 import android.app.Application
+import android.graphics.Bitmap
 import android.graphics.Typeface
 import android.text.Editable
 import android.text.Spanned
@@ -39,6 +40,7 @@ class NotallyModel(app: Application, private val type: Type) : AndroidViewModel(
 
     var body = Editable.Factory.getInstance().newEditable(String())
     val items = ArrayList<ListItem>()
+    var drawing = String()
 
     fun setStateFromBaseNote(baseNote: BaseNote) {
         id = baseNote.id
@@ -54,6 +56,8 @@ class NotallyModel(app: Application, private val type: Type) : AndroidViewModel(
 
         items.clear()
         items.addAll(baseNote.items)
+
+        drawing = baseNote.drawing
     }
 
 
@@ -95,7 +99,7 @@ class NotallyModel(app: Application, private val type: Type) : AndroidViewModel(
         val spans = getFilteredSpans(body)
         val trimmedBody = body.toString().trimEnd()
         val filteredItems = items.filter { (body) -> body.isNotBlank() }
-        return BaseNote(id, type, folder, color, title, pinned, timestamp, labels, trimmedBody, spans, filteredItems)
+        return BaseNote(id, type, folder, color, title, pinned, timestamp, labels, trimmedBody, spans, filteredItems, drawing)
     }
 
     private fun getFilteredSpans(spanned: Spanned): ArrayList<SpanRepresentation> {

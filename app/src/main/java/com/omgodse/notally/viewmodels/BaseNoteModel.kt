@@ -268,6 +268,7 @@ class BaseNoteModel(private val app: Application) : AndroidViewModel(app) {
         val body = when (baseNote.type) {
             Type.NOTE -> baseNote.body
             Type.LIST -> Operations.getBody(baseNote.items)
+            Type.DRAW -> baseNote.drawing
         }
 
         if (baseNote.title.isNotEmpty()) {

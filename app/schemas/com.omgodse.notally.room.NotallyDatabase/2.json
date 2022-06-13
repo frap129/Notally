@@ -2,11 +2,11 @@
   "formatVersion": 1,
   "database": {
     "version": 2,
-    "identityHash": "4b4b549bcedcae938a5da7fd5433af4f",
+    "identityHash": "4f921d24c413100a02f39254edf131c5",
     "entities": [
       {
         "tableName": "BaseNote",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `type` TEXT NOT NULL, `folder` TEXT NOT NULL, `color` TEXT NOT NULL, `title` TEXT NOT NULL, `pinned` INTEGER NOT NULL, `timestamp` INTEGER NOT NULL, `labels` TEXT NOT NULL, `body` TEXT NOT NULL, `spans` TEXT NOT NULL, `items` TEXT NOT NULL)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `type` TEXT NOT NULL, `folder` TEXT NOT NULL, `color` TEXT NOT NULL, `title` TEXT NOT NULL, `pinned` INTEGER NOT NULL, `timestamp` INTEGER NOT NULL, `labels` TEXT NOT NULL, `body` TEXT NOT NULL, `spans` TEXT NOT NULL, `items` TEXT NOT NULL, `drawing` TEXT NOT NULL)",
         "fields": [
           {
             "fieldPath": "id",
@@ -73,6 +73,12 @@
             "columnName": "items",
             "affinity": "TEXT",
             "notNull": true
+          },
+          {
+            "fieldPath": "drawing",
+            "columnName": "drawing",
+            "affinity": "TEXT",
+            "notNull": true
           }
         ],
         "primaryKey": {
@@ -122,7 +128,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '4b4b549bcedcae938a5da7fd5433af4f')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '4f921d24c413100a02f39254edf131c5')"
     ]
   }
 }

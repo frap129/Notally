@@ -69,6 +69,7 @@ object XMLUtils {
         var timestamp = 0L
         var pinned = false
         val items = ArrayList<ListItem>()
+        val drawing = String()
 
         val labels = HashSet<String>()
         val spans = ArrayList<SpanRepresentation>()
@@ -95,7 +96,7 @@ object XMLUtils {
         val type = if (rootTag == XMLTags.Note) {
             Type.NOTE
         } else Type.LIST
-        return BaseNote(0, type, folder, color, title, pinned, timestamp, labels, body, spans, items)
+        return BaseNote(0, type, folder, color, title, pinned, timestamp, labels, body, spans, items, drawing)
     }
 
 
